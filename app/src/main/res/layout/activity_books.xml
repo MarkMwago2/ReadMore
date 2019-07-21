@@ -18,6 +18,6 @@
         android:layout_marginTop="35dp"
         android:textColor="@color/colorTextIcons"
         android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textStyle="italic" />
 
 </RelativeLayout>
