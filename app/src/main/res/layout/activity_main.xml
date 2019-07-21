@@ -18,27 +18,16 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <ImageView
-        android:id="@+id/listview_image"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"
-        android:padding="10dp" />
-
-    <TextView
-        android:id="@+id/listview_item_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/listview_item_short_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:textSize="12sp" />
-
+        android:id="@+id/searchbooksEditText"
+        android:background="@color/colorTextIcons"
+        android:layout_above="@+id/buyBooksbutton"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:hint="Search Books"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="match_parent"
