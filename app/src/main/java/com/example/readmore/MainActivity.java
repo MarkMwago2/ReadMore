@@ -11,26 +11,24 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button mFindBooksButton;
-    private EditText msearchbooksEditText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        msearchbooksEditText = (EditText) findViewById(R.id.searchbooksEditText);
         mFindBooksButton = (Button) findViewById(R.id.buyBooksbutton);
         mFindBooksButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
+                startActivity(intent);final ListView list = findViewById(R.id.listView);
 
-                @Override
-                public void onClick(View v){
-                    Intent intent = new Intent(MainActivity.this, BooksActivity.class);
-                    String searchbooks = msearchbooksEditText.getText().toString();
-                    intent.putExtra("search", searchbooks);
-                    startActivity(intent);
-                }
-            });
-        }
+            };
+        });
     }
+
+            }
 
 
 
