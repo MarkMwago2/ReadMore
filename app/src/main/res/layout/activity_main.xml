@@ -9,7 +9,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:textColor="@color/colorTextIcons"
+        android:textColor="@color/colorAccent"
         android:id="@+id/appNameTextView"
         android:textSize="65dp"/>
 
