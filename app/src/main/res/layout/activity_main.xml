@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="153dp"
-        android:background="@color/colorAccent"
+        android:background="@color/colorSecondaryText"
         android:text="Buy books"
         android:textColor="@color/colorTextIcons" />
 
