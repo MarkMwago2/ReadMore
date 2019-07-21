@@ -11,16 +11,33 @@
         android:layout_marginTop="35dp"
         android:textColor="@color/colorTextIcons"/>
 
-
     <Button
+        android:id="@+id/Bookstorebutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Library"
-        android:id="@+id/buyBooksbutton"
-        android:background="@color/colorAccent"
-        android:textColor="@color/colorTextIcons"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="153dp"
+        android:background="@color/colorAccent"
+        android:text="Buy books"
+        android:textColor="@color/colorTextIcons" />
+
+
+
+
+
+    <Button
+        android:id="@+id/buyBooksbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorAccent"
+        android:text="Library"
+        android:textColor="@color/colorTextIcons" />
+
+
+
 
 
 </RelativeLayout>

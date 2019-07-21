@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 public class LibraryActivity extends AppCompatActivity {
     private TextView mbooksTextView;
-    private Button mFindBooksButton;
     private ListView mListView;
     private String[] books = new String[]{"abstractart", "purple", "azkaban", "gatsby", "flights"};
 //    private String[] images = new String[] {"@drawable/abstractart", "@drawable/purple", "@drawable/azkaban", "@drawable/gatsby", "@drawable/flights"};
@@ -22,7 +21,7 @@ public class LibraryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
-        mFindBooksButton= (Button) findViewById(R.id.buyBooksbutton);
+
         mListView = (ListView) findViewById(R.id.listView);
         mbooksTextView = (TextView) findViewById(R.id.booksTextView);
 
