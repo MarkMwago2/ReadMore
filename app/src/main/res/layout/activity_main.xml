@@ -20,6 +20,15 @@
         android:id="@+id/appNameTextView"
         android:textSize="65dp"/>
 
+    <TextView  android:id="@+id/txtView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the GoodReads Library"
+        android:layout_alignBottom="@id/appNameTextView"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryLight"/>
+
 
     <Button
         android:id="@+id/Bookstorebutton"
