@@ -1,3 +1,4 @@
+ week1
 # ReadMore
 Android app.
 
@@ -28,4 +29,5 @@ You can reach me at markmwago@gmail.com
 ## LICENSE DETAILS
 MIT 
 
+master
 
