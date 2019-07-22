@@ -9,18 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LibraryActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.readmore.MainActivity">
-            </meta-data>
-        </activity>
-        <activity android:name=".BooksActivity" />
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.readmore.MainActivity">
-        </meta-data>
-        <activity android:name=".MainActivity"
+        <activity android:name=".IntrosActivity"
+
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +18,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <activity android:name=".LibraryActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.readmore.IntrosActivity"></meta-data>
 
-</manifest>
+        </activity>
+        <activity android:name=".BooksActivity" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.readmore.IntrosActivity"></meta-data>
+
+
+            <activity android:name=".MainActivity" />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.readmore.IntrosActivity"></meta-data>
+
+        </application>
+
+    </manifest>
