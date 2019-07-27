@@ -1,21 +1,29 @@
 package com.example.readmore;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class IntrosActivity extends AppCompatActivity {
-    private Button mWelcomeButton;
+//    private Button mWelcomeButton;
+    @BindView(R.id.welcomeView1button) Button mWelcomeButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intros);
+        ButterKnife.bind(this);
 
-        mWelcomeButton = (Button) findViewById(R.id.welcomeView1button);
+//        mWelcomeButton = (Button) findViewById(R.id.welcomeView1button);
 
         mWelcomeButton.setOnClickListener(new View.OnClickListener() {
                                               @Override

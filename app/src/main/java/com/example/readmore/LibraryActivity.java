@@ -1,7 +1,7 @@
 package com.example.readmore;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,9 +11,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+
 public class LibraryActivity extends AppCompatActivity {
-    private TextView mbooksTextView;
-    private ListView mListView;
+//    private TextView mbooksTextView;
+    @BindView(R.id.booksTextView) TextView mbooksTextView;
+//    private ListView mListView;
+    @BindView(R.id.listView) ListView mListView;
     private String[] books = new String[]{"abstractart", "purple", "azkaban", "gatsby", "flights"};
 //    private String[] images = new String[] {"@drawable/abstractart", "@drawable/purple", "@drawable/azkaban", "@drawable/gatsby", "@drawable/flights"};
 
@@ -21,9 +29,10 @@ public class LibraryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
+        ButterKnife.bind(this);
 
-        mListView = (ListView) findViewById(R.id.listView);
-        mbooksTextView = (TextView) findViewById(R.id.booksTextView);
+//        mListView = (ListView) findViewById(R.id.listView);
+//        mbooksTextView = (TextView) findViewById(R.id.booksTextView);
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, books);
         mListView.setAdapter(adapter);

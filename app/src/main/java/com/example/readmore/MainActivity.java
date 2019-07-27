@@ -2,7 +2,7 @@ package com.example.readmore;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,20 +10,30 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private Button mFindBooksButton;
-    private Button mBookstoreButton;
-    private TextView mAppNameTextView;
+//    private Button mFindBooksButton;
+    @BindView(R.id.buyBooksbutton) Button mFindBooksButton;
+//    private Button mBookstoreButton;
+    @BindView(R.id.Bookstorebutton) Button mBookstoreButton;
+//    private TextView mAppNameTextView;
+    @BindView(R.id.appNameTextView) TextView mAppNameTextView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mBookstoreButton = (Button) findViewById(R.id.Bookstorebutton);
-        mFindBooksButton = (Button) findViewById(R.id.buyBooksbutton);
-        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
+        ButterKnife.bind(this);
+
+//        mBookstoreButton = (Button) findViewById(R.id.Bookstorebutton);
+//        mFindBooksButton = (Button) findViewById(R.id.buyBooksbutton);
+//        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
+
         Typeface ostrichFont = Typeface.createFromAsset(getAssets(), "fonts/ostrich-regular.ttf");
         mAppNameTextView.setTypeface(ostrichFont);
 
