@@ -81,7 +81,7 @@ public class LibraryActivity extends AppCompatActivity {
                         public void onResponse(Call call, Response response) throws IOException {
                             try {
                                 String jsonData = response.body().string();
-                                Log.v(TAG, jsonData);
+                                Log.d(TAG, jsonData);
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }

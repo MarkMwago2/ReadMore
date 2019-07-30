@@ -1,5 +1,5 @@
 package com.example.readmore;
-import com.google.gson.Gson;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,17 +18,21 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class ReadService {
-    public static void findTitle(String title, Callback callback) {
+    private static final String TAG = ReadService.class.getSimpleName();
+
+    public static void findTitle(String q, Callback callback) {
+        String secret = "secret";
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.GOODREADS_BASE_URL).newBuilder();
-        urlBuilder.addQueryParameter(Constants.GOODREADS_Books_QUERY_PARAMETER, title);
+        urlBuilder.addQueryParameter(Constants.GOODREADS_KEY_PARAMETER,Constants.GOODREADS_TOKEN);
+        urlBuilder.addQueryParameter(Constants.GOODREADS_BOOKS_QUERY_PARAMETER, q);
         String url = urlBuilder.build().toString();
+        Log.e(TAG, url);
 
         Request request = new Request.Builder()
                 .url(url)
-                .header("Authorization", Constants.GOODREADS_TOKEN)
                 .build();
 
         Call call = client.newCall(request);

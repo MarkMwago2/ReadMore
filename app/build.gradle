@@ -16,7 +16,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         buildTypes.each {
-            it.buildConfigField 'String', 'Goodreads_TOKEN', Goodreads_Token
+            it.buildConfigField 'String', 'GoodReads_TOKEN', GoodReads_Token
         }
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_8
