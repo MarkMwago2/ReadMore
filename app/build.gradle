@@ -34,6 +34,7 @@ android {
         implementation 'com.jakewharton:butterknife:10.0.0'
         implementation 'com.android.support:recyclerview-v7:+'
         implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+        implementation 'com.github.smart-fun:XmlToJson:1.4.5'
         implementation 'org.parceler:parceler-api:1.1.12'
         annotationProcessor 'org.parceler:parceler:1.1.12'
         annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
