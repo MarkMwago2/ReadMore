@@ -29,7 +29,7 @@ Android SDK v28
 You can reach me at markmwago@gmail.com
 
 ## LICENSE DETAILS
-MIT 
+MIT Copyright (c) {2019} Mark Mwago https://github.com/MarkMwago2/Readmore/blob/master/LICENSE
 
 
 
