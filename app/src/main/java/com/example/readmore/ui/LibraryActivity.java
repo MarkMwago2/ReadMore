@@ -1,4 +1,4 @@
-package com.example.readmore;
+package com.example.readmore.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +18,10 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 import java.util.*;
-import com.example.readmore.Books;
+
+import com.example.readmore.models.Books;
+import com.example.readmore.R;
+import com.example.readmore.service.ReadService;
 
 
 public class LibraryActivity extends AppCompatActivity {
@@ -27,8 +30,8 @@ public class LibraryActivity extends AppCompatActivity {
     @BindView(R.id.booksTextView)
     TextView mbooksTextView;
     //    private ListView mListView;
-    @BindView(R.id.listView)
-    ListView mListView;
+//    @BindView(R.id.listView)
+//    ListView mListView;
     private List<Books> books = new ArrayList<>();
 
     @Override
@@ -69,25 +72,24 @@ public class LibraryActivity extends AppCompatActivity {
                     LibraryActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            String[] bookNames = new String[books.size()];
-                            for (int i = 0; i < bookNames.length; i++) {
-                                bookNames[i] = books.get(i).getTitle();
+//                            String[] bookNames = new String[books.size()];
+//                            for (int i = 0; i < bookNames.length; i++) {
+//                                bookNames[i] = books.get(i).getTitle();
+//
+//                                ArrayAdapter adapter = new ArrayAdapter(LibraryActivity.this, android.R.layout.simple_list_item_1, bookNames);
+//                                mListView.setAdapter(adapter);
+//
+//                                for (Books book : books) {
+//                                    Log.d(TAG, "Title: " + book.getTitle());
+//                                    Log.d(TAG, "Author: " + book.getAuthor());
+//                                    Log.d(TAG, "Id: " + book.getId());
 
-                                ArrayAdapter adapter = new ArrayAdapter(LibraryActivity.this, android.R.layout.simple_list_item_1, bookNames);
-                                mListView.setAdapter(adapter);
 
-                                for (Books book : books) {
-                                    Log.d(TAG, "Title: " + book.getTitle());
-                                    Log.d(TAG, "Author: " + book.getAuthor());
-                                    Log.d(TAG, "Id: " + book.getId());
-
-                                }
 
                             }
-                        }
-                    });
-                }
+                        });
+                    }
+                });
 
-        });
+        }
     }
-}

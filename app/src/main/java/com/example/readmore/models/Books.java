@@ -1,4 +1,4 @@
-package com.example.readmore;
+package com.example.readmore.models;
 
 public class Books {
     private String Title;

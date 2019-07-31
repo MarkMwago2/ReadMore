@@ -1,4 +1,4 @@
-package com.example.readmore;
+package com.example.readmore.ui;
 
 import android.content.Intent;
 
@@ -11,6 +11,8 @@ import butterknife.ButterKnife;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.readmore.R;
 
 public class IntrosActivity extends AppCompatActivity {
 //    private Button mWelcomeButton;
