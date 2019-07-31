@@ -32,7 +32,7 @@ public class IntrosActivity extends AppCompatActivity {
                                               public void onClick(View v) {
                                                   Intent intent1 = new Intent(IntrosActivity.this, MainActivity.class);
                                                   startActivity(intent1);
-                                                  final ListView list = findViewById(R.id.listView);
+//                                                  final ListView list = findViewById(R.id.listView);
                                               }
                                           }
         );

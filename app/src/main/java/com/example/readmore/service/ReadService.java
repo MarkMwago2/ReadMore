@@ -42,8 +42,8 @@ public class ReadService {
         call.enqueue(callback);
     }
 
-    public static List<Books> processResults(Response response) {
-        List<Books> books = new ArrayList<>();
+    public static ArrayList<Books> processResults(Response response) {
+        ArrayList<Books> books = new ArrayList<>();
         try {
 //
             String xmlData = response.body().string();
