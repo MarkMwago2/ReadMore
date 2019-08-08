@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "631762609694",
+    "firebase_url": "https://readmore-101eb.firebaseio.com",
+    "project_id": "readmore-101eb",
+    "storage_bucket": "readmore-101eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631762609694:android:c3f14d80f4cc0f2b",
+        "android_client_info": {
+          "package_name": "com.example.readmore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631762609694-1ra4l2urmo9avhej8ersqm2g2g095c1f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.readmore",
+            "certificate_hash": "0ffa4cf9f05b52c7192d8a24f386b34ae0585b44"
+          }
+        },
+        {
+          "client_id": "631762609694-j4769qd4pmoh6fn7620mineqldpb15ve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsRud2bMkCqsjUFxV8ob9SvVK1200S8cI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631762609694-j4769qd4pmoh6fn7620mineqldpb15ve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
