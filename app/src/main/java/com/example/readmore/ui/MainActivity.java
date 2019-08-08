@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //    private TextView mAppNameTextView;
     @BindView(R.id.appNameTextView) TextView mAppNameTextView;
 //    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
-    @BindView(R.id.BooksEditText) TextView mBooksEditText;
+
 
 
     @Override
@@ -65,13 +65,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mFindBooksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v == mFindBooksButton){
-                    String books = mBooksEditText.getText().toString();
-                    if(!(books).equals(""))
-                    addToSharedPreferences(books);
+                if (v == mFindBooksButton) {
+                    Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
+                    startActivity(intent);
                 }
-                Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
-                startActivity(intent);
             }
         });
     }
