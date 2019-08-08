@@ -20,6 +20,12 @@
         android:id="@+id/appNameTextView"
         android:textSize="65dp"/>
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Searchbooks/author"
+        android:id="@+id/BooksEditText"/>
+
 
 
     <Button
@@ -31,9 +37,6 @@
         android:background="@color/colorSecondaryText"
         android:text="Buy books"
         android:textColor="@color/colorTextIcons" />
-
-
-
 
 
     <Button
