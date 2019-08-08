@@ -75,7 +75,7 @@ public class LibraryActivity extends AppCompatActivity {
                     LibraryActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            mAdapter = new LibraryListAdapter(getApplicationContext(), books);
+                            mAdapter = new LibraryListAdapter(LibraryActivity.this, books);
                             mRecyclerView.setAdapter(mAdapter);
                             RecyclerView.LayoutManager layoutManager =
                                     new LinearLayoutManager(LibraryActivity.this);
