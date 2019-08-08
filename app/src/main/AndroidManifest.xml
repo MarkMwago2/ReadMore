@@ -22,7 +22,7 @@
         <activity android:name=".ui.LibraryActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.readmore.ui.IntrosActivity"></meta-data>
+                android:value="com.example.readmore.ui.MainActivity"></meta-data>
 
         </activity>
         <activity android:name=".ui.BooksActivity" />
