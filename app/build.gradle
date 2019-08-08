@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.readmore"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -36,6 +36,7 @@ android {
         implementation 'androidx.legacy:legacy-support-v4:1.0.0'
         implementation 'com.github.smart-fun:XmlToJson:1.4.5'
         implementation 'org.parceler:parceler-api:1.1.12'
+        implementation 'com.google.firebase:firebase-core:17.0.0'
         annotationProcessor 'org.parceler:parceler:1.1.12'
         annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
         implementation 'com.google.code.gson:gson:2.8.5'
@@ -43,6 +44,7 @@ android {
         androidTestImplementation 'androidx.test:runner:1.2.0'
         androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
         testImplementation "org.robolectric:robolectric:4.2"
+        apply plugin: 'com.google.gms.google-services'
 
 
     }
