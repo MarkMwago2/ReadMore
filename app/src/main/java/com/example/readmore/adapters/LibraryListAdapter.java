@@ -28,7 +28,7 @@ public class LibraryListAdapter extends RecyclerView.Adapter<LibraryListAdapter.
     }
     @Override
     public LibraryListAdapter.LibraryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.library_list_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.library_list_item, parent, false);
         LibraryViewHolder viewHolder = new LibraryViewHolder(view);
         return viewHolder;
     }
@@ -60,7 +60,7 @@ public class LibraryListAdapter extends RecyclerView.Adapter<LibraryListAdapter.
         public void bindRestaurant(Books books) {
             mNameTextView.setText(books.getTitle());
             mCategoryTextView.setText(books.getAuthor());
-            mRatingTextView.setText("Rating: " + books.getId() + "/5");
+            mRatingTextView.setText("Rating: " + books.getId() );
         }
     }
 }
