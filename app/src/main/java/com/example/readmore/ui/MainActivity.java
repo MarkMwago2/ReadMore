@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 if (v == mFindBooksButton){
                     String books = mBooksEditText.getText().toString();
+                    if(!(books).equals(""))
                     addToSharedPreferences(books);
                 }
                 Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
