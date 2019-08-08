@@ -1,9 +1,11 @@
 package com.example.readmore.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -16,9 +18,13 @@ import butterknife.ButterKnife;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.readmore.Constants;
 import com.example.readmore.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+
 //    private Button mFindBooksButton;
     @BindView(R.id.buyBooksbutton) Button mFindBooksButton;
 //    private Button mBookstoreButton;
@@ -26,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 //    private TextView mAppNameTextView;
     @BindView(R.id.appNameTextView) TextView mAppNameTextView;
 //    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.BooksEditText) TextView mBooksEditText;
 
 
     @Override
@@ -33,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+
+        mFindBooksButton.setOnClickListener(this);
 
 //        mBookstoreButton = (Button) findViewById(R.id.Bookstorebutton);
 //        mFindBooksButton = (Button) findViewById(R.id.buyBooksbutton);
@@ -53,17 +65,26 @@ public class MainActivity extends AppCompatActivity {
         mFindBooksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (v == mFindBooksButton){
+                    String books = mBooksEditText.getText().toString();
+                    addToSharedPreferences(books);
+                }
                 Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
                 startActivity(intent);
-//
-//                final RecyclerView list = findViewById(R.id.recyclerView);
-//                Toast.makeText(MainActivity.this,"HEllo", Toast.LENGTH_LONG).show();
-
             }
         });
     }
 
-            }
+    private void addToSharedPreferences(String books) {
+        mEditor.putString(Constants.PREFERENCES_BOOKS_KEY, books).apply();
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+}
+
 
 
 
