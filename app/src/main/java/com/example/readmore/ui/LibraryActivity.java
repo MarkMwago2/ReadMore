@@ -5,11 +5,16 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,15 +38,15 @@ import com.example.readmore.service.ReadService;
 public class LibraryActivity extends AppCompatActivity {
     public static final String TAG = LibraryActivity.class.getSimpleName();
     //    private TextView mbooksTextView;
-//    @BindView(R.id.booksTextView) TextView mbooksTextView;
+    @BindView(R.id.booksTextView) TextView mbooksTextView;
     //    private ListView mListView;
 //    @BindView(R.id.listView)ListView mListView;
-    @BindView(R.id.recyclerView)
-    RecyclerView mRecyclerView;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     private LibraryListAdapter mAdapter;
     private ArrayList<Books> books = new ArrayList<>();
 
     private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
     private String mRecentTitle;
 
     @Override
@@ -52,6 +57,11 @@ public class LibraryActivity extends AppCompatActivity {
         String title = "the monk";
 
 
+        Intent intent = getIntent();
+        String location = intent.getStringExtra("library");
+        mbooksTextView.setText("Here are all the books in the library ");
+
+
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentTitle = mSharedPreferences.getString(Constants.PREFERENCES_BOOKS_KEY, null);
         if (mRecentTitle != null) {
@@ -59,11 +69,42 @@ public class LibraryActivity extends AppCompatActivity {
 
 //        mListView = (ListView) findViewById(R.id.listView);
 //        mbooksTextView = (TextView) findViewById(R.id.booksTextView);
+        }
+    }
 
-//            Intent intent = getIntent();
-//            String location = intent.getStringExtra("library");
-//        mbooksTextView.setText("Here are all the books in the library ");
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.menu_search, menu);
+            ButterKnife.bind(this);
 
+            mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            mEditor = mSharedPreferences.edit();
+
+            MenuItem menuItem = menu.findItem(R.id.action_search);
+            SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    addToSharedPreferences(query);
+                    getTitle(query);
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    return false;
+                }
+            });
+
+            return true;
+        }
+
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+            return super.onOptionsItemSelected(item);
         }
 
 //                @Override
@@ -71,7 +112,7 @@ public class LibraryActivity extends AppCompatActivity {
 //                    Intent intent = new Intent(LibraryActivity.this, BooksActivity.class);
 //                    startActivity(intent);final ListView list = findViewById(R.id.listView);
 
-    }
+
         private void getTitle(String title){
             final ReadService readService = new ReadService();
             readService.findTitle(title, new Callback() {
@@ -113,4 +154,7 @@ public class LibraryActivity extends AppCompatActivity {
             });
 
         }
+    private void addToSharedPreferences(String books) {
+        mEditor.putString(Constants.PREFERENCES_BOOKS_KEY, books).apply();
+    }
     }
