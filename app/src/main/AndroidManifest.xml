@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.CreateAccountActivity"></activity>
         <activity
-            android:name=".ui.IntrosActivity"
+            android:name=".ui.LoginActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,13 +30,13 @@
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.readmore.ui.IntrosActivity" />
+            android:value="com.example.readmore.ui.LoginActivity" />
 
         <activity android:name=".ui.MainActivity" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.readmore.ui.IntrosActivity" />
+            android:value="com.example.readmore.ui.LoginActivity" />
     </application>
 
 </manifest>
