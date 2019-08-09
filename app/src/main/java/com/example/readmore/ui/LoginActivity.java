@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.readmore.R;
 
-public abstract class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.registerTextView) TextView mRegisterTextView;
 //    private Button mWelcomeButton;
     @BindView(R.id.passwordLoginButton) Button mWelcomeButton;
@@ -43,5 +43,10 @@ public abstract class LoginActivity extends AppCompatActivity implements View.On
                 }
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
