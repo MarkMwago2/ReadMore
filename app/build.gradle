@@ -35,6 +35,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+
 }
 
 dependencies {
@@ -60,6 +62,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:18.0.1'
     implementation 'com.google.firebase:firebase-messaging:19.0.1'
     implementation 'com.google.firebase:firebase-auth:18.1.0'
+    implementation 'com.github.mohammadatif:Animatoo:master'
 
     apply plugin: 'com.google.gms.google-services'
 
