@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.readmore.Constants;
 import com.example.readmore.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -63,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mEditor = mSharedPreferences.edit();
 
         mFindBooksButton.setOnClickListener(this);
+        mAllBooksButton.setOnClickListener(this);
+        mBookstoreButton.setOnClickListener(this);
 
 //        mBookstoreButton = (Button) findViewById(R.id.Bookstorebutton);
 //        mFindBooksButton = (Button) findViewById(R.id.buyBooksbutton);
@@ -72,34 +75,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAppNameTextView.setTypeface(ostrichFont);
 
 
-        mBookstoreButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(MainActivity.this, BooksActivity.class);
-                startActivity(intent1);
-//                final ListView list = findViewById(R.id.listView);
-            }
-        });
-        mFindBooksButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (v == mFindBooksButton) {
-                    Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
-                    startActivity(intent);
-                }
-            }
-        });
-
-        mAllBooksButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (v == mFindBooksButton) {
-                    Intent intent = new Intent(MainActivity.this, AllBooksActivity.class);
-                    startActivity(intent);
-                }
-            }
-
-        });
+//        (new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+////                final ListView list = findViewById(R.id.listView);
+//            }
+//        });
+//        mFindBooksButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        (new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//
+//        });
     }
 
     private void addToSharedPreferences(String books) {
@@ -108,6 +104,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        if (v == mAllBooksButton) {
+                   Intent intent2 = new Intent(MainActivity.this, AllBooksActivity.class);
+                    startActivity(intent2);
+            Animatoo.animateZoom(this);
+              }
+        if (v == mFindBooksButton) {
+                    Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
+                    startActivity(intent);
+            Animatoo.animateWindmill(this);
+               }
+        if (v == mBookstoreButton){
+             Intent intent1 = new Intent(MainActivity.this, BooksActivity.class);
+               startActivity(intent1);
+            Animatoo.animateCard(this);
+
+        }
+
+
 
     }
 
@@ -136,16 +150,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         finish();
     }
 
-    @Override
-    public void onStart(){
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
+//    @Override
+//    public void onStart(){
+//        super.onStart();
+//        mAuth.addAuthStateListener(mAuthListener);
+//    }
 
     @Override
     public void onStop(){
         super.onStop();
-        mAuth.removeAuthStateListener(mAuthListener);
+//        mAuth.removeAuthStateListener(mAuthListener);
     }
 
 }

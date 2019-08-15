@@ -1,6 +1,8 @@
 package com.example.readmore.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.readmore.R;
+import com.example.readmore.util.ItemTouchHelperAdapter;
+import com.example.readmore.util.SimpleItemTouchHelperCallback;
 
 import butterknife.BindView;
 
@@ -34,6 +38,7 @@ public class AllBooksActivity extends AppCompatActivity implements View.OnClickL
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, books);
         mallbooksListView.setAdapter(adapter);
+
 
         mallbooksListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -60,7 +65,6 @@ public class AllBooksActivity extends AppCompatActivity implements View.OnClickL
         gestureDetector.onTouchEvent(event);
         return true;
 }
-
 }
 
 
