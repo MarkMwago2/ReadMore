@@ -42,6 +42,14 @@
         android:text="View Books"
         android:textColor="@color/colorTextIcons" />
 
+    <Button
+        android:id="@+id/Allbooks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="All books"
+        android:textColor="@color/colorTextIcons"
+        android:background="@color/colorSecondaryText"/>
+
 
 
 

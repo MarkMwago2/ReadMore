@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //    private TextView mAppNameTextView;
     @BindView(R.id.appNameTextView) TextView mAppNameTextView;
 //    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.Allbooks) Button mAllBooksButton;
 
 
 
@@ -89,6 +90,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        mAllBooksButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v == mFindBooksButton) {
+                    Intent intent = new Intent(MainActivity.this, AllBooksActivity.class);
+                    startActivity(intent);
+                }
+            }
+
+        });
     }
 
     private void addToSharedPreferences(String books) {
