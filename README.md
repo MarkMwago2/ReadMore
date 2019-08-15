@@ -1,4 +1,4 @@
- week1
+ week2
 # ReadMore
 Android app.
 
@@ -6,14 +6,14 @@ Android app.
 Mark Mwago
 
 ## Project Description
-An Android app that enables users to search for their favorite books from a library and buy them.
+An Android app that enables users to search and access book details with the GoodReads.com API
 
 ## Technologies and Frameworks Used
 Java 11
 
 Android Studio
 
-ButterKnife Dependencies
+ButterKnife 
 
 ## Prerequisites
 Android SDK v28
@@ -29,7 +29,7 @@ Android SDK v28
 You can reach me at markmwago@gmail.com
 
 ## LICENSE DETAILS
-MIT 
+MIT Copyright (c) {2019} Mark Mwago https://github.com/MarkMwago2/Readmore/blob/master/LICENSE 
 
 
 
