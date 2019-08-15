@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,11 +17,12 @@ import com.example.readmore.R;
 
 import butterknife.BindView;
 
-public class AllBooksActivity extends AppCompatActivity {
+public class AllBooksActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView mallbooksTextView;
     private ListView mallbooksListView;
     private String[] books = new String[]{"abstractart", "purple", "azkaban", "gatsby", "flights"};
-    private String[] images = new String[] {"@drawable/abstractart", "@drawable/purple", "@drawable/azkaban", "@drawable/gatsby", "@drawable/flights"};
+    private GestureDetector gestureDetector = null;
+//    private String[] images = new String[] {"@drawable/abstractart", "@drawable/purple", "@drawable/azkaban", "@drawable/gatsby", "@drawable/flights"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,7 @@ public class AllBooksActivity extends AppCompatActivity {
         mallbooksListView = (ListView) findViewById(R.id.allbookslistView);
         mallbooksTextView = (TextView) findViewById(R.id.allbooksTextView);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, books, images);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, books);
         mallbooksListView.setAdapter(adapter);
 
         mallbooksListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -46,7 +49,20 @@ public class AllBooksActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        gestureDetector.onTouchEvent(event);
+        return true;
 }
+
+}
+
 
 
 
